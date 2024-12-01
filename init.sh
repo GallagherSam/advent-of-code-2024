@@ -24,6 +24,9 @@ echo "Created file: $NOTES_FILE"
 DAY_DIR="day_$NUMBER"
 
 mkdir -p "$DAY_DIR"
+touch "$DAY_DIR/main.py"
+touch "$DAY_DIR/input.1.txt"
+touch "$DAY_DIR/input.2.txt"
 echo "Created directory: $DAY_DIR"
 
 # Navigate to the new directory
@@ -32,3 +35,7 @@ cd "$DAY_DIR" || { echo "Failed to navigate to directory $DAY_DIR"; exit 1; }
 # Create a virtual environment in the new directory
 virtualenv venv
 echo "Virtual environment created in $DAY_DIR/venv"
+
+# Enter the virtual env
+cd "$DAY_DIR"
+source venv/bin/activate
