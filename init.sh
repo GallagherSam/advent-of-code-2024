@@ -33,9 +33,5 @@ echo "Created directory: $DAY_DIR"
 cd "$DAY_DIR" || { echo "Failed to navigate to directory $DAY_DIR"; exit 1; }
 
 # Create a virtual environment in the new directory
-virtualenv venv
+python -m venv venv
 echo "Virtual environment created in $DAY_DIR/venv"
-
-# Enter the virtual env
-cd "$DAY_DIR"
-source venv/bin/activate
