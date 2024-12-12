@@ -1,4 +1,3 @@
-import time
 
 def p_2(): # Maybe overly optimistic
     data = load_input()
@@ -16,28 +15,18 @@ def p_2(): # Maybe overly optimistic
 
     # Iterate through the blinks
     blink_count = 75
-    for i in range(blink_count):
-        # print(nums_map)
-        start_time = time.time()
+    for _ in range(blink_count):
         new_map = {}
 
         for key in nums_map.keys():
-            # print('key', key)
             num_count = nums_map[key]
             blink_vals = blink(key)
-            # print('blink_vals', blink_vals)
             for val in blink_vals:
                 if val in new_map:
                     new_map[val] += num_count
                 else:
                     new_map[val] = num_count
-                # print(new_map)
         nums_map = new_map
-
-        end_time = time.time()
-        dur = round(end_time - start_time, 4)
-        # print(f'Duration: {dur}')
-        # input()
 
     print(f'Q2: {calc_length_from_map(nums_map)}')
             
